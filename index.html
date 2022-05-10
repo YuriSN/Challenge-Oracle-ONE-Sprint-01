@@ -1,0 +1,130 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>
+
+		<meta charset="UTF-8">
+
+		<!--Arquivos externo com CSS:-->
+		<!-- <link rel="stylesheet" href="reset.css"> -->
+		<link rel="stylesheet" href="style.css">
+
+		<!--Tag para nomear o titulo da pagina:-->
+		<title>Decodificador</title>
+	</head>
+
+	<body>
+
+
+		<header>
+			<div>
+				<h1><img class="imagem" src="logo.png"></h1>
+				<img id="imagem2" src="painel.png" width="350" height="650">
+			</div>
+		</header>
+
+		<a href="#" style="text-decoration:none" "font-weight: 24" class="btn bnt-1" onclick="Crip();"> Criptografar </a>
+		<a href="#" style="text-decoration:none" class="btn bnt-2" onclick="Descrip();" > Discriptografar </a>
+		<a href="#" style="text-decoration:none" class="btn bnt-3" onclick="Copiar();" > Copiar </a>
+		<main>
+			<div id="erro">
+				<img id="imagem3" src="erro.png">
+				<h1 id="textoerro"> Nenhum mensagem encontrada </h1>
+				<p id="textoerro2"> Digite um texto que você deseja criptografar ou descriptografar </p>
+			</div>
+		
+			<div id="textos" class="hidden">
+				<textarea id="texto1" cols="50" rows="30" required placeholder=" Digite seu Texto" style="resize: none" ></textarea>
+				<textarea id="texto2"cols="35" rows="20" style="resize: none" ></textarea> 
+			</div>
+			
+
+
+		</main>
+
+		<footer>
+
+			<img src="matrix.png" width="65";>
+			<p>Copyright © Yuri Silva <br> 2022
+
+		</footer>
+
+		
+
+	</body>
+
+</html>
+
+<!--======================================================== JS - Funções ===================================================-->
+
+<script>
+//Função para Criptografar:
+function Crip(){
+	if (document.getElementById("texto1").value != ""){
+		document.getElementById("erro").style.display ="none";
+		document.getElementById("texto2").style.display = "block";
+		document.getElementById("texto2").value = '';
+		texto = document.getElementById("texto1").value;
+		crip = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");  
+		document.getElementById("texto2").value = crip.toLowerCase();
+	}
+	else{
+		document.getElementById("erro").style.display ="block";
+		document.getElementById("texto2").style.display = "none";
+	}
+}
+//Função para Descriptografar:
+function Descrip(){
+	if (document.getElementById("texto1").value != ""){
+		document.getElementById("erro").style.display ="none";
+		document.getElementById("texto2").style.display = "block";
+		document.getElementById("texto2").value = '';
+		texto = document.getElementById("texto1").value;
+		descrip = texto.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");  
+		document.getElementById("texto2").value = descrip.toLowerCase();
+	}
+	else{
+		document.getElementById("erro").style.display ="block";
+		document.getElementById("texto2").style.display = "none";
+	}
+}
+</script>
+
+<!--====================================================== JS - Botão Cópiar ================================================-->
+
+<script>
+//Função cópiar botão: 
+function Copiar() {
+        let textoCopiado = document.getElementById("texto2");
+        textoCopiado.select();
+        textoCopiado.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("O texto copiado é: " + textoCopiado.value);
+    }
+ </script>
+
+<!--====================================================== JS - Esconder ====================================================-->
+
+<script>
+	/* function Crip(){
+		if (document.getElementById("texto1").value == ""){
+			document.getElementById("erro").style.display ="block";
+			document.getElementById("texto2").style.display = "none";
+		}
+	}*/
+</script>
+
+
+
+<!--  if(document.getElementById("texto1").value != ""){
+}
+    if else(document.getElementById("texto1").value === ""){
+    	document.getElementById("erro").style.display = "block"
+		document.getElementById("texto2").style.display = "none"
+    }
+    else {
+    	document.getElementById("erro").style.display = "none"
+		document.getElementById("texto2").style.display = "block"
+    }
+-->
