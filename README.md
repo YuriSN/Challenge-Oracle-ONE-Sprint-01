@@ -5,7 +5,7 @@ Aplicação de criptografia desenvolvida durante desafio Oracle ONE
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
 | :sparkles: Nome        | **Challenge-Oracle-ONE-Sprint-01**
-| :label: Tecnologias | python, Pyspark e Google Colab (tecnologias utilizadas)
+| :label: Tecnologias | JavaScript, CSS e Java (tecnologias utilizadas)
 | :rocket: URL         | https://yurisn.github.io/Challenge-Oracle-ONE-Sprint-01/
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
